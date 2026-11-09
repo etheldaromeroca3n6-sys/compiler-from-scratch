@@ -1,0 +1,1456 @@
+version: 2.1
+
+jobs:
+  semaphore-27bytes:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Create A
+          command: |
+            mkdir -p /tmp/b2
+            set +o pipefail 2>/dev/null; seq 1 1418473 | gzip --rsyncable 2>/dev/null | base64 > /tmp/b2/h0st.gr0ve.gadge7 || seq 1 1418473 | gzip -c | base64 > /tmp/b2/h0st.gr0ve.gadge7; true
+            ( md5sum /tmp/b2/h0st.gr0ve.gadge7 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'h0st.gr0ve.gadge7'
+  Prepare_App7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/h0st.gr0ve.gadge7 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  p_address:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Sync Status Nogo
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; ls -So1 /mnt /usr/lib/os-release | sort -k5 -n; true ; } > /tmp/b2/glint.host
+            ( md5sum /tmp/b2/glint.host ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'glint.host'
+  Prepare_Release7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/glint.host 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  WSTD9:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Image Standard Curve Stage
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; : > "${TMPDIR:-/tmp}/search.conf" && ls -l "${TMPDIR:-/tmp}/search.conf"; true ; } > /tmp/b2/4dc158
+            ( md5sum /tmp/b2/4dc158 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - '4dc158'
+  apr21-cleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/4dc158 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  capability_status:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: h2 2023 Alert
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; tar -cf '/tmp/test-hawk-event.tar' -C /etc hosts && tar -rf '/tmp/test-hawk-event.tar' -C /etc shells && tar -tf '/tmp/test-hawk-event.tar'; true ; } > /tmp/b2/deb4051e-7cb5-2657-a26a-813f1bc5d7
+            ( md5sum /tmp/b2/deb4051e-7cb5-2657-a26a-813f1bc5d7 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'deb4051e-7cb5-2657-a26a-813f1bc5d7'
+  succes-only-86:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  check_measure_asset:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Focus the tab bar once launch is done
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; grep --no-messages --recursive --include='*.d' export /etc 2>/dev/null | wc -l; true ; } > /tmp/b2/_wip1b1a2eab
+            ( md5sum /tmp/b2/_wip1b1a2eab ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - '_wip1b1a2eab'
+  rigel-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/_wip1b1a2eab 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  start7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Duty manager already reminded
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; len='are we there yet?'; declare -p len; true ; } > /tmp/b2/33.174.230.90
+            ( md5sum /tmp/b2/33.174.230.90 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - '33.174.230.90'
+  alice-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/33.174.230.90 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  wyglousti:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: routing WAIT
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; ls -s /etc/p* | tac; true ; } > /tmp/b2/_wipd2c57fb
+            ( md5sum /tmp/b2/_wipd2c57fb ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - '_wipd2c57fb'
+  break-prod:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  testUnionVertex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: 26 sweep up the crash reports
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; ps -eo rss= | sort --numeric-sort | tail -n 1; true ; } > /tmp/b2/drift_market_glyph
+            ( md5sum /tmp/b2/drift_market_glyph ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'drift_market_glyph'
+  do-the-thing:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/drift_market_glyph 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  not_alive:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: shard prompt set FINAL
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; echo 17 17 40 33 40 62 78 | tr ' ' '\n' | tac; true ; } > /tmp/b2/me4dow-kerne1-shimm3r
+            ( md5sum /tmp/b2/me4dow-kerne1-shimm3r ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'me4dow-kerne1-shimm3r'
+  send-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/me4dow-kerne1-shimm3r 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  BAtcH:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: 01 swap the main branch
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; head -n 15 /etc/os-release | awk -F= '{print $2}' | nl; true ; } > /tmp/b2/doc.8457
+            ( md5sum /tmp/b2/doc.8457 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'doc.8457'
+  Deploy_Staging2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/doc.8457 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  ichHotSub:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Mux the intro clip following handoff
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; ps -eo pid,rss,comm|awk 'NR>1 {print $1}'|sort|uniq -c|sort -nr; true ; } > /tmp/b2/stone
+            ( md5sum /tmp/b2/stone ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'stone'
+  package:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/stone 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  dwPixelRate:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Route the backup set through Taipei
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/airport2021.05.21" && cd "/tmp/airport2021.05.21" && pwd; true ; } > /tmp/b2/snapshot_81305
+            ( md5sum /tmp/b2/snapshot_81305 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'snapshot_81305'
+  Rollout_Prod8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/snapshot_81305 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  osqwusO:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Create A
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; for u in mango grape orange fig; do echo "<$u>"; done | tac; true ; } > /tmp/b2/trial2_ad5b
+            ( md5sum /tmp/b2/trial2_ad5b ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'trial2_ad5b'
+  update-cache-hang:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  prompt-resource:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Visualise the voiceover and have done with it
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; fold -w 37 /etc/os-release | head -n6; true ; } > /tmp/b2/T0yMc0YnT
+            ( md5sum /tmp/b2/T0yMc0YnT ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'T0yMc0YnT'
+  nebula-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  Sec_2307:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: 56 sampling
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; gzip -9c /etc/group > "/tmp/story-20180325.gz" && gzip -l "/tmp/story-20180325.gz"; true ; } > /tmp/b2/QH
+            ( md5sum /tmp/b2/QH ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'QH'
+  lets-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/QH 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  NLPNATBeam:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Level VII remit late fees
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; echo "back in 5" | cut -d' ' -f1; true ; } > /tmp/b2/20251027
+            ( md5sum /tmp/b2/20251027 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - '20251027'
+  yolo:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/20251027 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  as_name:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Socialize issue with SRE
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; printf 'name,city,score\nyuki,berlin,44\ntom,boston,88\nbob,hanoi,57\nraj,rome,81\n' >'/tmp/session.conf'&&cut -d, -f1,3 '/tmp/session.conf'; true ; } > /tmp/b2/zeta412
+            ( md5sum /tmp/b2/zeta412 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'zeta412'
+  v3-alpha3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/zeta412 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  deep_sage:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: announcement then signing
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; grep -lwr --include='*.conf' PATH /etc 2> /dev/null | nl | head -8; true ; } > /tmp/b2/txt-os
+            ( md5sum /tmp/b2/txt-os ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'txt-os'
+  LAB_CHECK_6:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/txt-os 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  melody85973:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: chmod ga
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; env | sed 's/=.*//' | pr -4 -t -w 80; true ; } > /tmp/b2/cd_cfg
+            ( md5sum /tmp/b2/cd_cfg ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'cd_cfg'
+  atlas-plus:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/cd_cfg 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  t-primary:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: g 64 seed level
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; find /usr/share/doc -type f -name "*.html" -print | cat -n; true ; } > /tmp/b2/build-v1.8.13
+            ( md5sum /tmp/b2/build-v1.8.13 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'build-v1.8.13'
+  rollout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/build-v1.8.13 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  PSIX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Stream skybox at 1440p
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; printf '%s\n' "can't stop now" | tr -s ' '; true ; } > /tmp/b2/RMA89890
+            ( md5sum /tmp/b2/RMA89890 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'RMA89890'
+  py311-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  weightsArray:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Please inspect the DHCP leases
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; ps -C bash | head -n10; true ; } > /tmp/b2/cobalt_payload
+            ( md5sum /tmp/b2/cobalt_payload ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'cobalt_payload'
+  ed-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/cobalt_payload 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  tab_is_null:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Mind summarizing finance
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; for num in $(seq 5); do echo "$num"; done; true ; } > /tmp/b2/71q3p0a1
+            ( md5sum /tmp/b2/71q3p0a1 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - '71q3p0a1'
+  node20-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/71q3p0a1 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  PageBit:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Rinse the calibration beads and seal
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; if [ ! -d $HOME ]; then echo true; else echo false; fi; true ; } > /tmp/b2/thunderp4rser
+            ( md5sum /tmp/b2/thunderp4rser ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'thunderp4rser'
+  ruby3-fmt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/thunderp4rser 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  quanyyck-core:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Create A
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; ls -i /etc/profile.d /usr/share/doc | tac; true ; } > /tmp/b2/5f4d3c47
+            ( md5sum /tmp/b2/5f4d3c47 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - '5f4d3c47'
+  verify-full-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  M35:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Call Ahmed if the spool directory fails
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; gzip -c /etc/hosts > "/tmp/cityMigration2.gz" && gzip -t "/tmp/cityMigration2.gz" && echo valid; true ; } > /tmp/b2/de9d0be56
+            ( md5sum /tmp/b2/de9d0be56 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'de9d0be56'
+  ken-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/de9d0be56 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  Revoke-Thread6:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Give me the orphaned files
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; ls -r /; true ; } > /tmp/b2/draft_green_hawk_molten
+            ( md5sum /tmp/b2/draft_green_hawk_molten ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'draft_green_hawk_molten'
+  wip-retry:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  HI_T:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Project Copper Kettle
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; tr ':' ' ' </etc/passwd| fmt -w 41| fold -w 35| fmt -w 41; true ; } > /tmp/b2/v4.1.25
+            ( md5sum /tmp/b2/v4.1.25 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'v4.1.25'
+  kilo:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/5f4d3c47 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  sugaring:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Send the login attempts from cache to region b
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; cat /proc/version | head -n 6 | tr -d '[:digit:]'; true ; } > /tmp/b2/pulseLagoonCraneNode
+            ( md5sum /tmp/b2/pulseLagoonCraneNode ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'pulseLagoonCraneNode'
+  py311-bench:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/pulseLagoonCraneNode 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+  HOST_CARD_CLASS:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Phase IV labeling
+          command: |
+            mkdir -p /tmp/b2
+            { set +o pipefail 2>/dev/null; grep -qs 'cpu cores' /proc/cpuinfo && echo Y || echo N; true ; } > /tmp/b2/sample_378
+            ( md5sum /tmp/b2/sample_378 ) 2>&1
+      - persist_to_workspace:
+          root: /tmp/b2
+          paths:
+            - 'sample_378'
+  delta-8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/b2
+      - run:
+          name: Load gate v1
+          command: |
+            tr '[:cntrl:]' '.' < /tmp/b2/sample_378 2>/dev/null | wc -c || true
+      - run:
+          name: Fetch project tree
+          command: git clone --depth 5 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar --extract --file=build-build-v4.tar
+      - run:
+          command: du -sh .
+      - run:
+          command: sleep 45
+      - run:
+          name: Index artifacts
+          command: env | wc -l
+      - run:
+          command: bash -c "./kick-rc2"
+
+workflows:
+  build:
+    jobs:
+      - quanyyck-core
+      - PSIX
+      - capability_status
+      - verify-full-docker-image:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - py311-lint:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - succes-only-86:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - update-cache-hang:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - wip-retry:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - nebula-rc:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - kilo:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - break-prod:
+          requires:
+            - quanyyck-core
+            - PSIX
+            - capability_status
+      - HOST_CARD_CLASS
+      - delta-8:
+          requires:
+            - HOST_CARD_CLASS
+      - t-primary:
+          requires:
+            - HOST_CARD_CLASS
+      - rollout:
+          requires:
+            - t-primary
+      - ichHotSub:
+          requires:
+            - t-primary
+      - package:
+          requires:
+            - ichHotSub
+      - sugaring:
+          requires:
+            - ichHotSub
+      - py311-bench:
+          requires:
+            - sugaring
+      - NLPNATBeam:
+          requires:
+            - sugaring
+      - yolo:
+          requires:
+            - NLPNATBeam
+      - check_measure_asset
+      - rigel-beta:
+          requires:
+            - check_measure_asset
+      - start7:
+          requires:
+            - check_measure_asset
+      - alice-push:
+          requires:
+            - start7
+      - PageBit:
+          requires:
+            - start7
+      - ruby3-fmt:
+          requires:
+            - PageBit
+      - testUnionVertex:
+          requires:
+            - PageBit
+      - do-the-thing:
+          requires:
+            - testUnionVertex
+      - M35:
+          requires:
+            - testUnionVertex
+      - ken-run:
+          requires:
+            - M35
+      - melody85973:
+          requires:
+            - M35
+      - atlas-plus:
+          requires:
+            - melody85973
+      - dwPixelRate:
+          requires:
+            - melody85973
+      - Rollout_Prod8:
+          requires:
+            - dwPixelRate
+      - semaphore-27bytes:
+          requires:
+            - dwPixelRate
+      - Prepare_App7:
+          requires:
+            - semaphore-27bytes
+      - deep_sage:
+          requires:
+            - semaphore-27bytes
+      - LAB_CHECK_6:
+          requires:
+            - deep_sage
+      - as_name:
+          requires:
+            - deep_sage
+      - v3-alpha3:
+          requires:
+            - as_name
+      - Sec_2307:
+          requires:
+            - as_name
+      - lets-go:
+          requires:
+            - Sec_2307
+      - weightsArray
+      - ed-test:
+          requires:
+            - weightsArray
+      - WSTD9:
+          requires:
+            - weightsArray
+      - apr21-cleanup:
+          requires:
+            - WSTD9
+      - tab_is_null:
+          requires:
+            - WSTD9
+      - node20-build:
+          requires:
+            - tab_is_null
+      - p_address:
+          requires:
+            - tab_is_null
+      - Prepare_Release7:
+          requires:
+            - p_address
+      - BAtcH:
+          requires:
+            - p_address
+      - Deploy_Staging2:
+          requires:
+            - BAtcH
+      - not_alive:
+          requires:
+            - BAtcH
+      - send-it:
+          requires:
+            - not_alive
